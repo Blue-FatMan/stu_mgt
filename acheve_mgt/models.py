@@ -39,9 +39,15 @@ class Student(models.Model):
     """
     学生模型
     """
+    STUDENT_TYPE = (
+        ('admin', '管理员'),
+        ('regular', '普通学生'),
+    )
     myclass = models.ForeignKey(MyClass, on_delete=models.CASCADE, verbose_name='班级')
     number = models.CharField(max_length=20, verbose_name='学号')
     name = models.CharField(max_length=20, verbose_name='学生姓名')
+    student_type = models.CharField(max_length=20, choices=STUDENT_TYPE,
+                                    default='admin', verbose_name='学生类型')
 
     class Meta:
         db_table = 'student'
