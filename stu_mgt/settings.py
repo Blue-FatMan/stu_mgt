@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
+import xadmin
+from collections import OrderedDict
+#设置xadmin左侧菜单排序，与xadmin.py文件的注册顺序有关
+xadmin.site._registry = OrderedDict()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,8 +49,8 @@ VERDOR_APPS = [
 ]
 
 LOCAL_APPS = [
-    'acheve_mgt',
-    'account',
+    'account.apps.AccountConfig',
+    'acheve_mgt.apps.AcheveMgtConfig',
     'xadmin',
     'crispy_forms',
     'reversion',

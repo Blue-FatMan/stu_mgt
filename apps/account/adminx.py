@@ -23,7 +23,7 @@ class GlobalSettings(object):
 
 class UserAdmin(object):
     list_display = ['username', 'password', 'is_superuser', 'user_type']
-    ordering = ['username', 'is_superuser', 'user_type']
+    ordering = ['-create_time', 'username', 'is_superuser', 'user_type']
     search_fields = ['username', 'is_superuser', 'user_type']
 
 

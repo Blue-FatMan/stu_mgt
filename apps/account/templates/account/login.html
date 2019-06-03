@@ -1,12 +1,41 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>登入</title>
+  <meta charset="utf-8">
+  <title>登入系统</title>
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}"  media="all">
 </head>
+
 <body>
 
-<h><strong>{{ message }}</strong></h>
+<h1><strong>{{ message }}</strong></h1>
+
+<form class="layui-form" method="POST" action="/account/login/">
+    {% csrf_token %}
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+            <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">请务必填写用户名</div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">请务必填写密码</div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+
+</form>
 
 
 </body>
