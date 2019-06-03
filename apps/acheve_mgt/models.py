@@ -80,6 +80,7 @@ class Course(models.Model):
         db_table = 'course'
         verbose_name = '课程'
         verbose_name_plural = verbose_name
+        unique_together = (('name', 'teacher_name'), )
 
     def __str__(self):
         return self.name
@@ -106,9 +107,16 @@ class ScoreShip(models.Model):
                                 related_name='scoreship', verbose_name='学生')
 
     term = models.CharField(max_length=20, choices=TERM, default='2018.2', verbose_name='学期')
-    daily_score = models.DecimalField(max_digits=5, decimal_places=2, verbose_name='平时成绩')
-    exam_score = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='考试成绩')
+    daily_score = models.FloatField(verbose_name='平时成绩')
+    exam_score = models.FloatField(verbose_name='考试成绩')
     create_time = models.DateTimeField(auto_now=True, verbose_name='添加时间')
+
+    def get_sum_score1(self):
+        sum_score1 = self.exam_score + self.daily_score
+        return sum_score1
+
+    sum_score = models.FloatField(verbose_name='test', default=get_sum_score1)
+
 
     class Meta:
         db_table = 'scoreship'
@@ -119,5 +127,13 @@ class ScoreShip(models.Model):
     def __str__(self):
         return "course: %s, student: %s, daily_score: %s, exam_score: %s" % \
                (self.course, self.student, self.daily_score, self.exam_score)
+
+    # def get_sum_score(self):
+    #     return self.exam_score*0.7 + self.daily_score*0.3
+    # get_sum_score.short_description = '单科成绩总评分'
+
+
+
+
 
 

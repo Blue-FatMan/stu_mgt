@@ -11,7 +11,7 @@ class MyClassAdmin(object):
 
 
 class StudentAdmin(object):
-    list_display = ['number', 'name', 'myclass', 'student__course_name']
+    list_display = ['number', 'name', 'myclass']
     ordering = ['-create_time', 'number']
 
 
@@ -21,8 +21,13 @@ class CourseAdmin(object):
 
 
 class ScoreShipAdmin(object):
-    list_display = ['term', 'course', 'student', 'daily_score', 'exam_score']
+    list_display = ['term', 'course', 'student', 'daily_score',
+                    'exam_score', 'get_sum_score']
     ordering = ['-create_time', 'term']
+
+    def get_sum_score(self, obj):
+        return obj.exam_score*0.7 + obj.daily_score*0.3
+    get_sum_score.short_description = '单科成绩总评分'
 
 
 #后台中各个注册模型排列顺序与注册顺序有关
