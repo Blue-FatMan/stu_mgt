@@ -66,7 +66,7 @@
           <a href="javascript:;">个人成绩查询</a>
           <dl class="layui-nav-child">
             {% for s  in myclass.student.all %}
-              <dd><a href="{% url 'acheve_mgt:person' s.pk %}">{{ s.pk }}{{ s.name }}</a></dd>
+              <dd><a href="{% url 'acheve_mgt:person' s.pk %}">{{ forloop.counter }}{{ s.name }}</a></dd>
             {% endfor %}
           </dl>
         </li>
