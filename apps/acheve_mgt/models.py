@@ -111,13 +111,6 @@ class ScoreShip(models.Model):
     exam_score = models.FloatField(verbose_name='考试成绩')
     create_time = models.DateTimeField(auto_now=True, verbose_name='添加时间')
 
-    def get_sum_score1(self):
-        sum_score1 = self.exam_score + self.daily_score
-        return sum_score1
-
-    sum_score = models.FloatField(verbose_name='test', default=get_sum_score1)
-
-
     class Meta:
         db_table = 'scoreship'
         verbose_name = '成绩'
@@ -128,12 +121,13 @@ class ScoreShip(models.Model):
         return "course: %s, student: %s, daily_score: %s, exam_score: %s" % \
                (self.course, self.student, self.daily_score, self.exam_score)
 
-    # def get_sum_score(self):
-    #     return self.exam_score*0.7 + self.daily_score*0.3
-    # get_sum_score.short_description = '单科成绩总评分'
+    def get_sum_score(self):
+        """计算每个学生的单科成绩总评分"""
+        sum_score = self.exam_score*0.7 + self.daily_score*0.3
+        return sum_score
+    get_sum_score.short_description = '单科成绩总评分'
 
-
-
-
+    #abandent
+    # sum_score = models.FloatField(default=0, verbose_name='单科成绩总评分')
 
 

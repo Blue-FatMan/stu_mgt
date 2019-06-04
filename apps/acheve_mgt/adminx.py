@@ -25,9 +25,9 @@ class ScoreShipAdmin(object):
                     'exam_score', 'get_sum_score']
     ordering = ['-create_time', 'term']
 
-    def get_sum_score(self, obj):
-        return obj.exam_score*0.7 + obj.daily_score*0.3
-    get_sum_score.short_description = '单科成绩总评分'
+    # def get_sum_score(self, obj):
+    #     return obj.exam_score*0.7 + obj.daily_score*0.3
+    # get_sum_score.short_description = '单科成绩总评分'
 
 
 #后台中各个注册模型排列顺序与注册顺序有关

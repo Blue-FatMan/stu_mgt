@@ -146,6 +146,11 @@ STATICFILES_DIRS = [
 ]
 
 
+#媒体文件
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 #自定义添加设置
 #覆盖Django的默认用户模型
 AUTH_USER_MODEL = 'account.User'

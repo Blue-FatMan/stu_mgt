@@ -76,16 +76,38 @@
   <div class="layui-body">
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
-
-      <table id="demo" lay-filter="test">
-        <h1 align="center">
-          <strong>
-            {{ myclass.get_dept_display }}{{ myclass.get_grade_display }}
-            {{ myclass.get_name_display }}学生信息表
-          </strong>
-        </h1>
+      <h1 align="center">
+        <strong>
+          {{ term }}{{ myclass.get_dept_display }}
+          {{ myclass.get_grade_display }}{{ myclass.get_name_display }}课程信息表
+        </strong>
+      </h1>
+      <table class="layui-table">
+        <colgroup>
+          <col width="180">
+          <col width="640">
+          <col width="480">
+          <!--<col width="260">-->
+        </colgroup>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>课程名</th>
+            <th>任课老师</th>
+            <!--<th>查看全班单科成绩</th>-->
+          </tr>
+        </thead>
+        <tbody>
+          {% for course in course_list %}
+            <tr>
+              <td>{{ course.order }}</td>
+              <td>{{ course.name }}</td>
+              <td>{{ course.teacher_name }}</td>
+              <!--<td><a href="{% url 'acheve_mgt:single_course' course.id %}">查看</a></td>-->
+            </tr>
+          {% endfor %}
+        </tbody>
       </table>
-
     </div>
   </div>
 
@@ -103,32 +125,32 @@ layui.use('element', function(){
 });
 </script>
 
-<script>
-layui.use('table', function(){
-  var table = layui.table;
+<!--<script>-->
+<!--layui.use('table', function(){-->
+  <!--var table = layui.table;-->
 
-  //第一个实例
-  table.render({
-    elem: '#demo'
-    ,height: 312
-    ,url: '/account/student_message/' //数据接口
-    ,page: true //开启分页
-    ,cols: [[ //表头
-      {field: 'id', title: '序号', width:202, sort: true, fixed: 'left'}
-      ,{field: 'number', title: '学号', width:700, sort: true}
-      ,{field: 'name', title: '姓名', width:400, sort: true}
-      <!--,{field: 'sex', title: '性别', width:80, sort: true}-->
-      <!--,{field: 'city', title: '城市', width:80}-->
-      <!--,{field: 'sign', title: '签名', width: 177}-->
-      <!--,{field: 'experience', title: '积分', width: 80, sort: true}-->
-      <!--,{field: 'score', title: '评分', width: 80, sort: true}-->
-      <!--,{field: 'classify', title: '职业', width: 80}-->
-      <!--,{field: 'wealth', title: '财富', width: 135, sort: true}-->
-    ]]
-  });
+  <!--//第一个实例-->
+  <!--table.render({-->
+    <!--elem: '#demo'-->
+    <!--,height: 312-->
+    <!--,url: '/account/student_message/' //数据接口-->
+    <!--,page: true //开启分页-->
+    <!--,cols: [[ //表头-->
+      <!--{field: 'id', title: '序号', width:202, sort: true, fixed: 'left'}-->
+      <!--,{field: 'number', title: '学号', width:700, sort: true}-->
+      <!--,{field: 'name', title: '姓名', width:400, sort: true}-->
+      <!--&lt;!&ndash;,{field: 'sex', title: '性别', width:80, sort: true}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'city', title: '城市', width:80}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'sign', title: '签名', width: 177}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'experience', title: '积分', width: 80, sort: true}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'score', title: '评分', width: 80, sort: true}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'classify', title: '职业', width: 80}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'wealth', title: '财富', width: 135, sort: true}&ndash;&gt;-->
+    <!--]]-->
+  <!--});-->
 
-});
-</script>
+<!--});-->
+<!--</script>-->
 
 </body>
 </html>
