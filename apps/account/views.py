@@ -66,14 +66,17 @@ def index(request):
 
 @login_required
 def student_message(request):
+    """index视图的数据接口"""
     myclass = MyClass.objects.all()[0]
     students = myclass.student.all()
     count = students.count()
 
     data = []
+    order = 1
     for s in students:
         core_data = {}  #很有必要，防止引用
-        core_data['id'] = s.pk
+        core_data['id'] = order
+        order += 1
         core_data['number'] = s.number
         core_data['name'] = s.name
         data.append(core_data)
