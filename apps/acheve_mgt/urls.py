@@ -11,7 +11,5 @@ urlpatterns = [
     path('single_course/', views.view_course, name='view_course'),
     path('single_course/<int:pk>', views.single_course, name='single_course'),
     path('score_together/', views.score_together, name='score_together'),
-    # path('student_message/', StudentListView.as_view(), name='student_message')
-    # path('single_course/', ),
-    # path(''),
+    path('score_rating/', views.score_rating, name='score_rating'),
 ]

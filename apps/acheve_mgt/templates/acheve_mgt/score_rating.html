@@ -1,10 +1,180 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>学生成绩管理系统</title>
+  <link rel="stylesheet" href="{% static 'layui/css/layui.css' %}">
 </head>
 <body>
+
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">学生成绩管理系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">功能1待扩展</a></li>
+      <li class="layui-nav-item"><a href="">功能2待扩展</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它功能待扩展</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">管理1</a></dd>
+          <dd><a href="">管理2</a></dd>
+          <dd><a href="">管理3</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="{% static 'img/avatar/default.jpg' %}" class="layui-nav-img">
+          {{ user.username }}
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="/account/logout/">退出</a></li>
+    </ul>
+  </div>
+
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">班级信息</a>
+          <dl class="layui-nav-child">
+            <dd><a href="{% url 'account:index' %}">班级学生信息</a></dd>
+          </dl>
+          <dl class="layui-nav-child">
+            <dd><a href="{% url 'account:course' %}">班级课程信息</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">班级成绩查询</a>
+          <dl class="layui-nav-child">
+            <dd><a href="{% url 'acheve_mgt:view_course' %}">全班单科成绩单</a></dd>
+            <dd><a href="{% url 'acheve_mgt:score_together' %}">全班汇总成绩单</a></dd>
+            <dd><a href="{% url 'acheve_mgt:score_rating' %}">成绩评级</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">个人成绩查询</a>
+          <dl class="layui-nav-child">
+            {% for s  in myclass.student.all %}
+              <dd><a href="{% url 'acheve_mgt:person' s.pk %}">{{ s.pk }}{{ s.name }}</a></dd>
+            {% endfor %}
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <h1 align="center">
+        <strong>
+          {{ term }}{{ myclass.get_dept_display }}
+          {{ myclass.get_grade_display }}{{ myclass.get_name_display }}成绩评级表
+        </strong>
+      </h1>
+      <!--<h3>-->
+        <!--<strong>-->
+          <!--<div align="center">课程名称：{{ course.name }}任课老师：{{ course.teacher_name }}</div>-->
+        <!--</strong>-->
+      <!--</h3>-->
+      <table class="layui-table">
+        <colgroup>
+          <col width="120">
+          <col width="280">
+          <col width="180">
+          <col width="180">
+          <col width="180">
+          <col width="180">
+          <col width="180">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>课程名称</th>
+            <th>优秀</th>
+            <th>良好</th>
+            <th>中等</th>
+            <th>及格</th>
+            <th>不及格</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in rating_data %}
+            <tr>
+              <td>{{ data.order }}</td>
+              <td>{{ data.course_name }}</td>
+              <td>{{ data.a }}</td>
+              <td>{{ data.b }}</td>
+              <td>{{ data.c }}</td>
+              <td>{{ data.d }}</td>
+              <td>{{ data.e }}</td>
+            </tr>
+          {% endfor %}
+          <tr>
+              <td>{{ all_course_rating.order }}</td>
+              <td>{{ all_course_rating.four_courses }}</td>
+              <td>{{ all_course_rating.a }}</td>
+              <td>{{ all_course_rating.b }}</td>
+              <td>{{ all_course_rating.c }}</td>
+              <td>{{ all_course_rating.d }}</td>
+              <td>{{ all_course_rating.e }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © 赣ICP备19003810
+  </div>
+</div>
+<script src="{% static 'layui/layui.js' %}"></script>
+<script>
+//JavaScript代码区域
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+
+<!--<script>-->
+<!--layui.use('table', function(){-->
+  <!--var table = layui.table;-->
+
+  <!--//第一个实例-->
+  <!--table.render({-->
+    <!--elem: '#demo'-->
+    <!--,height: 312-->
+    <!--,url: '/account/student_message/' //数据接口-->
+    <!--,page: true //开启分页-->
+    <!--,cols: [[ //表头-->
+      <!--{field: 'id', title: '序号', width:202, sort: true, fixed: 'left'}-->
+      <!--,{field: 'number', title: '学号', width:700, sort: true}-->
+      <!--,{field: 'name', title: '姓名', width:400, sort: true}-->
+      <!--&lt;!&ndash;,{field: 'sex', title: '性别', width:80, sort: true}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'city', title: '城市', width:80}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'sign', title: '签名', width: 177}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'experience', title: '积分', width: 80, sort: true}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'score', title: '评分', width: 80, sort: true}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'classify', title: '职业', width: 80}&ndash;&gt;-->
+      <!--&lt;!&ndash;,{field: 'wealth', title: '财富', width: 135, sort: true}&ndash;&gt;-->
+    <!--]]-->
+  <!--});-->
+
+<!--});-->
+<!--</script>-->
 
 </body>
 </html>

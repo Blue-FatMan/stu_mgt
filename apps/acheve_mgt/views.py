@@ -155,3 +155,83 @@ def score_together(request):
         'row_score_together': score_together_data[0],
         'term': term,
     })
+
+@login_required
+def score_rating(request):
+    user = request.user
+    myclass = MyClass.objects.all()[0]
+    students = myclass.student.all()
+    courses = students[0].course.all()
+
+    scoreship = ScoreShip.objects.get(student=students[0], course=courses[0])
+    term = scoreship.get_term_display()
+
+    rating_data = []
+    order = 1
+    for c in courses:
+        d = {}
+        d['order'] = order
+        order += 1
+        d['course_name'] = c.name
+        ra, rb, rc, rd, re = 0, 0, 0, 0, 0
+
+        for s in students:
+            scoreship = ScoreShip.objects.get(student=s, course=c)
+            score = scoreship.daily_score*0.3 + scoreship.exam_score*0.7
+            if score >=90 and score <= 100:
+                ra += 1
+            elif score>=80 and score <90:
+                rb += 1
+            elif score>=70 and score<80:
+                rc += 1
+            elif score>=60 and score<70:
+                rd += 1
+            else:
+                re += 1
+        d['a'] = ra
+        d['b'] = rb
+        d['c'] = rc
+        d['d'] = rd
+        d['e'] = re
+        rating_data.append(d)
+
+    all_course_rating = {}
+    ra, rb, rc, rd, re = 0, 0, 0, 0, 0
+    for s in students:
+        sum_score = 0
+        for c in courses:
+            scoreship = ScoreShip.objects.get(student=s, course=c)
+            score = scoreship.daily_score * 0.3 + scoreship.exam_score * 0.7
+            sum_score += score
+
+            if score < 60:
+                re += 1
+                break
+        else:
+            avg_score = sum_score/s.course.count()
+            if avg_score >=90 and avg_score <= 100:
+                ra += 1
+            elif avg_score>=80 and avg_score <90:
+                rb += 1
+            elif avg_score>=70 and avg_score<80:
+                rc += 1
+            elif avg_score>=60 and avg_score<70:
+                rd += 1
+            else:
+                re += 1
+    all_course_rating['a'] = ra
+    all_course_rating['b'] = rb
+    all_course_rating['c'] = rc
+    all_course_rating['d'] = rd
+    all_course_rating['e'] = re
+    all_course_rating['order'] = order
+    all_course_rating['four_courses'] = '四门课程总评'
+
+
+    return render(request, 'acheve_mgt/score_rating.html', context={
+        'user': user,
+        'myclass': myclass,
+        'rating_data': rating_data,
+        'all_course_rating': all_course_rating,
+        'term': term,
+    })
