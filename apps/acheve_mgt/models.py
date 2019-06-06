@@ -44,7 +44,7 @@ class MyClass(models.Model):
         unique_together = (('grade', 'name'), )
 
     def __str__(self):
-        return self.name
+        return self.get_name_display()
 
 
 class Student(models.Model):

@@ -22,8 +22,8 @@ class GlobalSettings(object):
 
 
 class UserAdmin(object):
-    list_display = ['username', 'password', 'is_superuser', 'user_type']
-    ordering = ['-create_time', 'username', 'is_superuser', 'user_type']
+    list_display = ['username', 'password', 'is_superuser']
+    ordering = ['-create_time', 'username', 'is_superuser']
     search_fields = ['username', 'is_superuser', 'user_type']
 
 
