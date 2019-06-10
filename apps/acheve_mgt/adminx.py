@@ -1,5 +1,6 @@
 import xadmin
 from xadmin import views
+from xadmin.layout import Fieldset, Main, Row, Side
 
 from acheve_mgt.models import MyClass, Student, Course, ScoreShip
 
@@ -21,8 +22,20 @@ class CourseAdmin(object):
 
 
 class ScoreShipAdmin(object):
-    list_display = ['term', 'course', 'student', 'daily_score',
+    list_display = ['course', 'student', 'daily_score',
                     'exam_score', 'get_sum_score']
+    # fieldsets = (
+    #     ('None', {
+    #         'fields':('course', 'student', 'daily_score', 'exam_score', 'get_sum_score'),
+    #     }),
+    # )
+    # form_layout = (
+    #     Main(
+    #         Fieldset('',
+    #                  'daily_score'),
+    #     ),
+    # )
+
     ordering = ['-create_time', 'term']
 
     # def get_sum_score(self, obj):

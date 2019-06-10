@@ -4,6 +4,8 @@
     <list default="true" id="3cdbb7ff-e06f-4bb1-972e-cbaafa541bd8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/account/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/adminx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/acheve_mgt/adminx.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/acheve_mgt/adminx.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/acheve_mgt/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/acheve_mgt/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="264">
+              <caret line="39" column="50" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -26,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/account/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="285">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -38,10 +40,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/account/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" column="61" lean-forward="true" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+            <state relative-caret-position="302">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/account/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="15" selection-start-line="15" selection-end-line="64" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,46 +64,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/adminx.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+            <state relative-caret-position="302">
+              <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/adminx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/templates/acheve_mgt/score_rating.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="68" column="81" selection-start-line="68" selection-start-column="81" selection-end-line="68" selection-end-column="81" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -174,7 +152,6 @@
         <option value="$PROJECT_DIR$/apps/account/templates/account/login.html" />
         <option value="$PROJECT_DIR$/apps/acheve_mgt/apps.py" />
         <option value="$PROJECT_DIR$/apps/account/apps.py" />
-        <option value="$PROJECT_DIR$/apps/account/models.py" />
         <option value="$PROJECT_DIR$/apps/acheve_mgt/templates/acheve_mgt/student_message.html" />
         <option value="$PROJECT_DIR$/stu_mgt/settings.py" />
         <option value="$PROJECT_DIR$/apps/account/urls.py" />
@@ -188,9 +165,10 @@
         <option value="$PROJECT_DIR$/apps/acheve_mgt/templates/acheve_mgt/single_course.html" />
         <option value="$PROJECT_DIR$/apps/acheve_mgt/templates/acheve_mgt/view_course.html" />
         <option value="$PROJECT_DIR$/apps/acheve_mgt/templates/acheve_mgt/person.html" />
-        <option value="$PROJECT_DIR$/apps/account/adminx.py" />
-        <option value="$PROJECT_DIR$/apps/acheve_mgt/adminx.py" />
         <option value="$PROJECT_DIR$/apps/acheve_mgt/models.py" />
+        <option value="$PROJECT_DIR$/apps/acheve_mgt/adminx.py" />
+        <option value="$PROJECT_DIR$/apps/account/adminx.py" />
+        <option value="$PROJECT_DIR$/apps/account/models.py" />
       </list>
     </option>
   </component>
@@ -206,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,15 +254,7 @@
               <item name="stu_mgt" type="462c0819:PsiDirectoryNode" />
               <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
               <item name="xadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stu_mgt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stu_mgt" type="462c0819:PsiDirectoryNode" />
-              <item name="extra_apps" type="462c0819:PsiDirectoryNode" />
-              <item name="xadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="xadmin" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stu_mgt" type="b2602c69:ProjectViewProjectNode" />
@@ -342,6 +311,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,10 +356,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.24966975" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="2" sideWeight="0.5021097" side_tool="true" weight="0.24966975" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -399,7 +368,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49867898" visible="true" weight="0.31303117" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49867898" visible="true" weight="0.31303117" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.501321" side_tool="true" weight="0.31303117" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -408,8 +377,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/acheve_mgt/migrations/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/account/migrations/__init__.py" />
     <entry file="file://$PROJECT_DIR$/acheve_mgt/urls.py" />
     <entry file="file://$PROJECT_DIR$/account/templates/account/test.html" />
     <entry file="file://$PROJECT_DIR$/account/views.py" />
@@ -585,12 +552,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/account/views.py">
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/filters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="15" selection-start-line="15" selection-end-line="64" selection-end-column="6" />
+        <state relative-caret-position="-684">
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="63" column="15" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,75 +620,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/filters.py">
+    <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/forms.py">
+    <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="302">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/account/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="61" lean-forward="true" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+        <state relative-caret-position="302">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/models.py">
+    <entry file="file://$PROJECT_DIR$/apps/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/acheve_mgt/adminx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="76">
+          <caret line="15" selection-start-line="15" selection-end-line="64" selection-end-column="6" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/adminx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="155">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/models.py">
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/views/edit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+        <state relative-caret-position="-2622">
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extra_apps/xadmin/plugins/bookmark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2736">
+          <folding>
+            <element signature="e#1#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="24" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

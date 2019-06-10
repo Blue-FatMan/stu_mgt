@@ -31,10 +31,13 @@ class MyClass(models.Model):
         ('t1', '通信工程1班'),
         ('t2', '通信工程2班'),
     )
-    dept = models.CharField(max_length=20, default='信息',
-                            choices=DEPT, verbose_name='学院')
-    grade = models.CharField(max_length=20, default='16', choices=GRADE, verbose_name='年级')
-    name = models.CharField(max_length=20, choices=CLASS_NAME, default='w1', verbose_name='班级名称')
+    # dept = models.CharField(max_length=20, default='信息',
+    #                         choices=DEPT, verbose_name='学院')
+    # grade = models.CharField(max_length=20, default='16', choices=GRADE, verbose_name='年级')
+    # name = models.CharField(max_length=20, choices=CLASS_NAME, default='w1', verbose_name='班级名称')
+    dept = models.CharField(max_length=20, choices=DEPT, verbose_name='学院')
+    grade = models.CharField(max_length=20, choices=GRADE, verbose_name='年级')
+    name = models.CharField(max_length=20, choices=CLASS_NAME, verbose_name='班级名称')
     create_time = models.DateTimeField(auto_now=True, verbose_name='添加时间')
 
     class Meta:

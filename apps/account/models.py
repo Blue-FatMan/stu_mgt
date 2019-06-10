@@ -17,8 +17,8 @@ class User(AbstractUser):
     )
     username = models.CharField(max_length=20, unique=True, verbose_name='用户姓名')
     is_superuser = models.BooleanField(default=0, verbose_name='是否是超级用户')
-    user_type = models.CharField(max_length=20, choices=USER_TYPE,
-                                 default='regular', verbose_name='用户类型')
+    # user_type = models.CharField(max_length=20, choices=USER_TYPE,
+    #                              default='regular', verbose_name='用户类型')
     create_time = models.DateTimeField(auto_now=True, verbose_name='添加时间')
 
     class Meta:
